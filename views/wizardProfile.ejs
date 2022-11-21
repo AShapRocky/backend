@@ -3,26 +3,42 @@
   <head>
     <title>WizardProfile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
   </head>
   <body>
-    <h1>All Wizards</h1>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <form class="form-inline">
+        <button class="btn btn-outline-success" type="button">All Students</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Harry Potter</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Alex Shapiro</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Ninad Chaudhari</button>
+      </form>
+    </nav>
+      
+      <ul style="list-style-type:none;">
+        <% wizards.forEach(function(wizard){ %>
+          <li>
+            <div class="row" style="background-color: #4598d3;">
+              <div class="col-sm-4">
+                <img/ src = <%= wizard.picture %> height="256">
+              </div>
+              <div class="col-sm-6">
+                <h1><%= wizard.name %></h1>
+              </div>
 
+              <div class="col-sm-6">
+                <%= wizard.profile %>
+              </div>
+            </div>
+          </li>
+          <br>
+          <br>
 
-
-    <ul>
-
-
-      <% wizards.forEach(function(wizard){ %>
-        <li>
-          
-          <%= wizard.name + ": " %>
-
-          <%= wizard.profile %>
-        
-        </li>
-
-      <% }); %>
-    </ul>
-
+        <% }); %>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
   </body>
 </html>

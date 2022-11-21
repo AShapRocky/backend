@@ -15,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
 
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
@@ -26,21 +28,21 @@ app.get('/hello', (req, res, next) => {
 
 let harry = {
   name: "Harry Potter",
-  profile: "Gryffindor",
+  profile: "Harry Potter is the boy who live. He defeated Voldemort when he was only a year old by deflecting the killing curse",
   picture: "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg"
 }
-let remus = {
-  name: "Remus Lupin",
-  profile: "Gryffindor",
-  picture: "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg"
+let alex = {
+  name: "Alex Shapiro",
+  profile: "Alex Shapiro is a senior majoring in Computer Science and Applied Mathematics. He began learning computer science when he was in 10th grade. He hopes to teach math and computer science in a high school one day.",
+  picture: "https://static.wixstatic.com/media/0752c4_a38f845890ca48018261198e22ed1646~mv2.png/v1/crop/x_0,y_171,w_472,h_472/fill/w_544,h_544,al_c,lg_1,q_85,enc_auto/Screen%20Shot%202019-12-05%20at%201_14_13%20PM.png"
 }
-let salazar = {
-  name : "Salazar Slytherin",
-  profile: "Slytherin",
-  picture: "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg"
+let ninad = {
+  name : "Ninad Chaudhari",
+  profile: "Ninad Chaudhari is the TA for ICSI 418Y. He knows a ton about computer science. He has been a TA at UAlbany for many years, and was one of the TAs for ISCI 213 in spring 2020.",
+  picture: "https://avatars.githubusercontent.com/u/1305825?v=4"
 }
 
-let wizards = [ harry, remus, salazar]
+let wizards = [ harry, alex, ninad]
 
 
 app.get('/', (req, res, next) => {
