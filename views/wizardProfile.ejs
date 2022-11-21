@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WizardProfile</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>All Wizards</h1>
+
+
+
+    <ul>
+
+
+      <% wizards.forEach(function(wizard){ %>
+        <li>
+          
+          <%= wizard.name + ": " %>
+
+          <%= wizard.profile %>
+        
+        </li>
+
+      <% }); %>
+    </ul>
+
+  </body>
+</html>
