@@ -42,11 +42,11 @@ let ninad = {
   picture: "https://avatars.githubusercontent.com/u/1305825?v=4"
 }
 
-let wizards = [ harry, alex, ninad]
+let students = [ harry, alex, ninad]
 
 
 app.get('/', (req, res, next) => {
-  res.render(    'wizardProfile'   ,    {  wizards: wizards  }     );
+  res.render(    'studentProfile'   ,    {  students: students  }     );
 });
 
 
@@ -66,22 +66,22 @@ const client = new MongoClient(url);
 app.get('/db', async function(req, res, next) {
   try {
     
-    const wizardsCopy = JSON.parse(JSON.stringify(wizards));
+    const studentsCopy = JSON.parse(JSON.stringify(students));
     // Try removing this! Can you answer why a deep copy is required here? 
     // What happens if same wizards array is used?
 
     await client.connect();
     console.log('Connected successfully to server');
     const db = client.db(dbName);
-    const collection = db.collection('wizards');
+    const collection = db.collection('students');
     
-    const insertResult = await collection.insertMany(wizardsCopy);
+    const insertResult = await collection.insertMany(studentsCopy);
   
     console.log('Inserted documents =>', insertResult);
 
     const findResult = await collection.find({}).toArray();
     //res.send(findResult);
-    res.render('wizardProfile', {wizards: findResult});
+    res.render('studentProfile', {students: findResult});
 
   } catch (error) {
     console.log(error);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WizardProfile</title>
+    <title>StudentProfile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -17,18 +17,18 @@
     </nav>
       
       <ul style="list-style-type:none;">
-        <% wizards.forEach(function(wizard){ %>
+        <% students.forEach(function(student){ %>
           <li>
             <div class="row" style="background-color: #4598d3;">
               <div class="col-sm-4">
-                <img/ src = <%= wizard.picture %> height="256">
+                <img/ src = <%= student.picture %> height="256">
               </div>
               <div class="col-sm-6">
-                <h1><%= wizard.name %></h1>
+                <h1><%= student.name %></h1>
               </div>
 
               <div class="col-sm-6">
-                <%= wizard.profile %>
+                <%= student.profile %>
               </div>
             </div>
           </li>
